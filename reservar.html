@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DERIVA | Reservar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="status">9:41 <span>● ▰ ▰</span></div>
+
+    <main class="page reservation-form-page">
+      <a class="back" href="experiencias.html">‹</a>
+
+      <p class="eyebrow">TU PRÓXIMA EXPERIENCIA</p>
+      <h1>Reservar<br>experiencia</h1>
+
+      <p>Elegí los detalles para vivir tu próxima experiencia DERIVA.</p>
+
+      <form id="bookingForm">
+        <label for="experience">Experiencia</label>
+        <select id="experience" name="experience" required>
+          <option value="montanas">Cena entre montañas</option>
+          <option value="olivos">Almuerzo entre olivos</option>
+          <option value="vinedos">Viñedos al atardecer</option>
+          <option value="fuego">Fuego y tierra</option>
+        </select>
+
+        <label for="date">Fecha</label>
+        <input id="date" name="date" type="date" required>
+
+        <label for="people">Cantidad de personas</label>
+        <select id="people" name="people" required>
+          <option value="1">1 persona</option>
+          <option value="2" selected>2 personas</option>
+          <option value="3">3 personas</option>
+          <option value="4">4 personas</option>
+          <option value="5">5 personas</option>
+          <option value="6">6 personas</option>
+        </select>
+
+        <label for="guest">Nombre completo</label>
+        <input id="guest" name="guest" type="text"
+               placeholder="Tu nombre" required>
+
+        <button class="btn" type="submit">
+          Guardar reserva de prueba &rarr;
+        </button>
+      </form>
+
+      <p id="bookingMessage" class="form-message" role="status"></p>
+
+      
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DERIVA | Experiencias</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- BARRA SUPERIOR -->
+    <div class="status">
+      9:41
+      <span>● ▰ ▰</span>
+    </div>
+
+    <main class="page">
+
+      <!-- ENCABEZADO -->
+      <div class="top-actions">
+        <a href="index.html">☰</a>
+        <span class="small-brand">DERIVA</span>
+        <a href="sobre.html">♙</a>
+      </div>
+
+      <h1>Nuestras<br>experiencias</h1>
+
+      <!-- BUSCADOR -->
+      <input
+        id="buscar"
+        class="search"
+        type="search"
+        placeholder="⌕  Buscar experiencias..."
+      >
+
+      <!-- FILTROS -->
+      <div class="filters">
+
+        <button class="selected" data-filter="todas">
+          Todas
+        </button>
+
+        <button data-filter="montana">
+          Montaña
+        </button>
+
+        <button data-filter="vinedo">
+          Viñedo
+        </button>
+
+        <button data-filter="olivos">
+          Olivos
+        </button>
+
+      </div>
+
+      <!-- LISTA DE EXPERIENCIAS -->
+      <section class="experience-list">
+
+        <!-- CENA ENTRE MONTAÑAS -->
+        <a
+          href="detalle-montanas.html"
+          class="experience-item"
+          data-category="montana"
+        >
+
+          <img
+            src="imagenes/cena.png"
+            alt="Cena entre montañas"
+            class="experience-thumb"
+          >
+
+          <div>
+            <h2>Cena entre montañas</h2>
+            <p>♧ Valle de Uco</p>
+            <p>◷ 4 horas</p>
+          </div>
+
+          <span class="bookmark">♧</span>
+
+        </a>
+
+        <!-- ALMUERZO ENTRE OLIVOS -->
+        <a
+          href="detalle-olivos.html"
+          class="experience-item"
+          data-category="olivos"
+        >
+
+          <img
+            src="imagenes/almuerzo.png"
+            alt="Almuerzo junto al rio"
+            class="experience-thumb"
+          >
+
+          <div>
+            <h2>Almuerzo junto al rio</h2>
+            <p>♧ Luján de Cuyo</p>
+            <p>◷ 3 horas</p>
+          </div>
+
+          <span class="bookmark">♧</span>
+
+        </a>
+
+        <!-- VIÑEDOS AL ATARDECER -->
+        <a
+          href="detalle-vinedos.html"
+          class="experience-item"
+          data-category="vinedo"
+        >
+
+          <img
+            src="imagenes/olivos.jpg"
+            alt="Viñedos al atardecer"
+            class="experience-thumb"
+          >
+
+          <div>
+            <h2>Viñedos al atardecer</h2>
+            <p>♧ Potrerillos</p>
+            <p>◷ 4 horas</p>
+          </div>
+
+          <span class="bookmark">♧</span>
+
+        </a>
+
+        <!-- FUEGO Y TIERRA -->
+        <a
+          href="detalle-fuego.html"
+          class="experience-item"
+          data-category="fuego"
+        >
+
+          <img
+            src="imagenes/fogata.png"
+            alt="Fuego y tierra"
+            class="experience-thumb"
+          >
+
+          <div>
+            <h2>Fuego y tierra</h2>
+            <p>♧ Valle de Uco</p>
+            <p>◷ 4 horas</p>
+          </div>
+
+          <span class="bookmark">♧</span>
+
+        </a>
+
+      </section>
+
+    </main>
+
+    <!-- NAVEGACION INFERIOR -->
+    <nav class="bottom-nav">
+
+      <a href="index.html">
+        <span>⌂</span>
+        Inicio
+      </a>
+
+      <a href="experiencias.html" class="active">
+        <span>❧</span>
+        Experiencias
+      </a>
+
+      <a href="reservas.html">
+        <span>▦</span>
+        Reservas
+      </a>
+
+      <a href="descubrir.html">
+        <span>◇</span>
+        Descubrir
+      </a>
+
+      <a href="sobre.html">
+        <span>♙</span>
+        Perfil
+      </a>
+
+    </nav>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DERIVA | Nuestros ingredientes</title>
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+  <style>
+
+    /* DISEÑO GENERAL */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e8ded0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: #302920;
+    }
+
+    .app {
+      position: relative;
+      width: 390px;
+      max-width: 100%;
+      height: 780px;
+      margin: 20px auto;
+      background: #faf3e8;
+      border: 2px solid #493b30;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    /* BARRA SUPERIOR */
+
+    .status {
+      height: 27px;
+      padding: 8px 19px;
+      font: bold 11px Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* CONTENIDO CON SCROLL */
+
+    .page {
+      height: calc(100% - 27px);
+      overflow-y: auto;
+      padding: 14px 22px 95px;
+      scrollbar-width: none;
+      position: relative;
+    }
+
+    .page::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* FLECHA PARA VOLVER */
+
+    .back {
+      display: inline-block;
+      font: 32px Arial, sans-serif;
+      color: #42352a;
+      text-decoration: none;
+      margin-bottom: 19px;
+      position: relative;
+      z-index: 3;
+    }
+
+    /* ENCABEZADO */
+
+    .heading {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 29px;
+    }
+
+    h1 {
+      font-size: 46px;
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.5px;
+    }
+
+    h1 em {
+      font-weight: 400;
+    }
+
+    .olive-line {
+      height: 2px;
+      width: 75px;
+      background: #969673;
+      margin: 19px 0 16px;
+    }
+
+    .subtitle {
+      font-family: Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 2.2px;
+      line-height: 1.7;
+      color: #5a4e42;
+    }
+
+    /* RAMA MINIMALISTA */
+
+    .decoracion-olivo {
+      position: absolute;
+      top: 20px;
+      right: -10px;
+      width: 165px;
+      height: 150px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .8;
+    }
+
+    .decoracion-olivo svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* CUADRÍCULA DE INGREDIENTES */
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 12px;
+      row-gap: 23px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ingredient {
+      min-width: 0;
+      text-align: center;
+    }
+
+    .ingredient img {
+      display: block;
+      width: 100%;
+      height: 115px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      background: #e5d6c0;
+    }
+
+    .ingredient h2 {
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1;
+      margin: 9px 0 3px;
+    }
+
+    .ingredient p {
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.05;
+      color: #615243;
+    }
+
+    /* NAVEGACIÓN INFERIOR */
+
+    .bottom-nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 65px;
+      background: rgba(250,243,232,.98);
+      border-top: 1px solid #ded0bb;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 6;
+    }
+
+    .bottom-nav a {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      color: #302920;
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .bottom-nav a span {
+      font-size: 22px;
+    }
+
+    .bottom-nav a.active {
+      color: #842632;
+    }
+
+    /* ADAPTACIÓN A CELULAR REAL */
+
+    @media (max-width: 480px) {
+
+      body {
+        background: #faf3e8;
+      }
+
+      .app {
+        width: 100%;
+        height: 100dvh;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- BARRA SUPERIOR -->
+
+  <div class="status">
+    <span>9:41</span>
+    <span>● ▰ ▰</span>
+  </div>
+
+  <main class="page">
+
+    <!-- RAMITA DE OLIVO -->
+
+    <div class="decoracion-olivo" aria-hidden="true">
+
+      <svg viewBox="0 0 180 150"
+           xmlns="http://www.w3.org/2000/svg">
+
+        <g fill="none"
+           stroke="#928d66"
+           stroke-width="1.5"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+
+          <path d="M180 6 Q130 38 90 75 Q50 108 15 135"/>
+
+          <path d="M130 42 Q100 12 67 22"/>
+          <path d="M100 67 Q117 97 106 125"/>
+
+          <path d="M130 42 Q110 12 85 19 Q103 34 130 42Z"/>
+          <path d="M130 42 Q148 18 160 15 Q153 35 130 42Z"/>
+
+          <path d="M95 70 Q63 50 44 62 Q70 77 95 70Z"/>
+          <path d="M95 70 Q100 98 80 116 Q77 90 95 70Z"/>
+
+          <path d="M65 96 Q35 82 20 94 Q43 108 65 96Z"/>
+
+        </g>
+
+      </svg>
+
+    </div>
+
+    <!-- VOLVER -->
+
+    <a href="experiencias.html" class="back">‹</a>
+
+    <!-- TÍTULO -->
+
+    <div class="heading">
+
+      <h1>
+        Nuestros<br>
+        <em>ingredientes</em>
+      </h1>
+
+      <div class="olive-line"></div>
+
+      <p class="subtitle">
+        PRODUCTOS DE MENDOZA,<br>
+        EN SU ESTADO MÁS PURO.
+      </p>
+
+    </div>
+
+    <!-- INGREDIENTES -->
+
+    <section class="ingredients-grid">
+
+      <!-- AZAFRÁN -->
+
+      <article class="ingredient">
+
+        <img
+          src="imagenes/azafran.png"
+          alt="Azafrán"
+        >
+
+        <h2>Azafrán</h2>
+
+        <p>Valle de Uco</p>
+
+      </article>
+
+      <!-- HONGOS -->
+
+      <article class="ingredient">
+
+        <img
+          src="imagenes/hongo.png"
+          alt="Hongos de montaña"
+        >
+
+        <h2>Hongos de montaña</h2>
+
+        <p>Cordillera de los Andes</p>
+
+      </article>
+
+      <!-- PIMIENTA ROSA -->
+
+      <article class="ingredient">
+
+        <img
+          src="imagenes/pimienta.png"
+          alt="Pimienta rosa"
+        >
+
+        <h2>Pimienta rosa</h2>
+
+        <p>Luján de Cuyo</p>
+
+      </article>
+
+      <!-- MEMBRILLO -->
+
+      <article class="ingredient">
+
+        <img
+          src="imagenes/membrillo.png"
+          alt="Membrillo"
+        >
+
+        <h2>Membrillo andino</h2>
+
+        <p>Tunuyán</p>
+
+      </article>
+
+      <!-- ACEITUNAS -->
+
+      <article class="ingredient">
+
+        <img
+          src="imagenes/aceituna.png"
+          alt="Aceitunas"
+        >
+
+        <h2>Aceitunas de altura</h2>
+
+        <p>Maipú</p>
+
+      </article>
+
+      <!-- FLORES COMESTIBLES -->
+
+      <article class="ingredient">
+
+        <img
+          src="imagenes/flores.png"
+          alt="Flores comestibles"
+        >
+
+        <h2>Flores comestibles</h2>
+
+        <p>Valle de Uco</p>
+
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+
+  <nav class="bottom-nav">
+
+    <a href="index.html">
+      <span>⌂</span>
+      Inicio
+    </a>
+
+    <a href="experiencias.html">
+      <span>❧</span>
+      Experiencias
+    </a>
+
+    <a href="reservas.html">
+      <span>▦</span>
+      Reservas
+    </a>
+
+    <a href="descubrir.html" class="active">
+      <span>◇</span>
+      Descubrir
+    </a>
+
+    <a href="sobre.html">
+      <span>♙</span>
+      Perfil
+    </a>
+
+  </nav>
+
+</div>
+
+</body>
+</html>

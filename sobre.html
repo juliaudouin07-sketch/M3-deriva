@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DERIVA | Sobre nosotros</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* CONFIGURACIÓN GENERAL */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e8ded0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: #302920;
+    }
+
+    /* FORMATO DE CELULAR */
+
+    .app {
+      width: 390px;
+      max-width: 100%;
+      height: 780px;
+      margin: 20px auto;
+      background: #faf3e8;
+      border: 2px solid #493b30;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* TEXTURA DE PAPEL */
+
+    .app::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0.12;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
+    }
+
+    /* BARRA SUPERIOR */
+
+    .status {
+      height: 27px;
+      padding: 8px 19px 0;
+      display: flex;
+      justify-content: space-between;
+      font: bold 11px Arial, sans-serif;
+      flex-shrink: 0;
+    }
+
+    /* CONTENIDO */
+
+    .page {
+      position: relative;
+      flex: 1;
+      padding: 10px 27px 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* ENCABEZADO */
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 35px;
+    }
+
+    .back {
+      position: absolute;
+      left: 0;
+      top: -4px;
+      font: 31px Arial, sans-serif;
+      color: #302920;
+      text-decoration: none;
+    }
+
+    .page-header h1 {
+      font-size: 27px;
+      font-weight: 500;
+    }
+
+    /* RAMA DE OLIVO */
+
+    .olive-decoration {
+      position: absolute;
+      top: 35px;
+      right: -13px;
+      width: 110px;
+      height: 145px;
+      opacity: .65;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .olive-decoration svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* LOGO DERIVA */
+
+    .logo {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin: 13px auto 0;
+    }
+
+    .logo svg {
+      width: 160px;
+      height: 74px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .logo svg path {
+      stroke: #302920;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .logo svg circle {
+      fill: #bd643a;
+    }
+
+    .logo-name {
+      font-size: 29px;
+      letter-spacing: 9px;
+      padding-left: 9px;
+      margin-top: -6px;
+    }
+
+    /* LÍNEA BORDÓ */
+
+    .small-line {
+      width: 35px;
+      height: 1.5px;
+      background: #842632;
+      margin: 21px auto 22px;
+    }
+
+    /* DESCRIPCIÓN */
+
+    .introduction {
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.15;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    /* VALORES DE LA MARCA */
+
+    .values {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 23px;
+    }
+
+    .value {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      padding: 11px 0;
+      border-bottom: 1px solid #dfd0ba;
+    }
+
+    .value:last-child {
+      border-bottom: none;
+    }
+
+    .value-icon {
+      width: 53px;
+      height: 53px;
+      min-width: 53px;
+      border: 1px solid #77715c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .value-icon svg {
+      width: 31px;
+      height: 31px;
+      fill: none;
+      stroke: #403c31;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .value-text {
+      border-left: 1px solid #dac8ac;
+      padding-left: 15px;
+    }
+
+    .value-text h2 {
+      font-family: Georgia, serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 1.8px;
+      margin-bottom: 4px;
+    }
+
+    .value-text p {
+      font-size: 18px;
+      font-style: italic;
+      color: #675849;
+    }
+
+    /* FRASE FINAL */
+
+    .final-quote {
+      text-align: center;
+      font-size: 21px;
+      font-style: italic;
+      line-height: 1.1;
+      color: #842632;
+      margin-top: 12px;
+    }
+
+    .bottom-line {
+      width: 35px;
+      height: 1.5px;
+      background: #842632;
+      margin: 17px auto 0;
+    }
+
+    /* MONTAÑAS INFERIORES */
+
+    .mountain-decoration {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 65px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .mountain-decoration svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ADAPTACIÓN A CELULAR */
+
+    @media (max-width: 480px) {
+
+      body {
+        background: #faf3e8;
+      }
+
+      .app {
+        width: 100%;
+        height: 100dvh;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+      }
+
+      .page {
+        overflow-y: auto;
+        scrollbar-width: none;
+      }
+
+      .page::-webkit-scrollbar {
+        display: none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- BARRA SUPERIOR -->
+
+  <div class="status">
+    <span>9:41</span>
+    <span>● ▰ ▰</span>
+  </div>
+
+  <main class="page">
+
+    <!-- ENCABEZADO -->
+
+    <header class="page-header">
+      <a href="index.html" class="back">‹</a>
+      <h1>Sobre Deriva</h1>
+    </header>
+
+    <!-- RAMA DE OLIVO -->
+
+    <div class="olive-decoration" aria-hidden="true">
+
+      <svg viewBox="0 0 130 180"
+           xmlns="http://www.w3.org/2000/svg">
+
+        <g fill="none"
+           stroke="#898568"
+           stroke-width="1.6"
+           stroke-linecap="round">
+
+          <path d="M130 5 Q80 42 61 90 Q37 130 9 174"/>
+
+          <path d="M90 40 Q62 14 32 26"/>
+          <path d="M75 67 Q108 60 118 38"/>
+          <path d="M57 99 Q25 76 12 88"/>
+          <path d="M45 120 Q75 106 82 82"/>
+
+        </g>
+
+        <g fill="#959575"
+           fill-opacity=".4"
+           stroke="#898568"
+           stroke-width="1.1">
+
+          <path d="M90 40 Q70 13 40 25 Q60 37 90 40Z"/>
+          <path d="M75 67 Q105 53 119 32 Q115 59 75 67Z"/>
+          <path d="M57 99 Q30 72 10 87 Q30 105 57 99Z"/>
+          <path d="M45 120 Q76 101 80 80 Q86 108 45 120Z"/>
+          <path d="M30 143 Q11 120 1 131 Q10 146 30 143Z"/>
+
+        </g>
+
+      </svg>
+
+    </div>
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+      <svg viewBox="0 0 200 100"
+           xmlns="http://www.w3.org/2000/svg">
+
+        <path d="M8 75 Q43 69 78 34 Q94 17 110 34 Q145 69 192 75"/>
+        <path d="M24 80 Q90 57 148 78"/>
+        <circle cx="135" cy="20" r="9"/>
+
+      </svg>
+
+      <div class="logo-name">DERIVA</div>
+
+    </div>
+
+    <!-- LÍNEA DECORATIVA -->
+
+    <div class="small-line"></div>
+
+    <!-- INTRODUCCIÓN -->
+
+    <p class="introduction">
+      Deriva crea encuentros gastronómicos
+      en paisajes de Mendoza. Una forma de
+      viajar más lenta, sensible y memorable.
+    </p>
+
+    <!-- VALORES -->
+
+    <div class="values">
+
+      <!-- NATURALEZA -->
+
+      <div class="value">
+
+        <div class="value-icon">
+          <svg viewBox="0 0 64 44">
+            <path d="M5 34 L23 18 L32 26 L43 11 L59 34"/>
+            <path d="M12 37 L27 28 L39 37"/>
+          </svg>
+        </div>
+
+        <div class="value-text">
+          <h2>NATURALEZA</h2>
+          <p>Paisajes que inspiran</p>
+        </div>
+
+      </div>
+
+      <!-- GASTRONOMÍA -->
+
+      <div class="value">
+
+        <div class="value-icon">
+          <svg viewBox="0 0 64 44">
+
+            <path d="M15 5 V21"/>
+            <path d="M10 5 V18 Q10 25 15 25 Q20 25 20 18 V5"/>
+            <path d="M15 25 V40"/>
+
+            <path d="M42 5 V40"/>
+            <path d="M42 5 Q54 13 46 24 L42 26"/>
+
+          </svg>
+        </div>
+
+        <div class="value-text">
+          <h2>GASTRONOMÍA</h2>
+          <p>Sabores con identidad</p>
+        </div>
+
+      </div>
+
+      <!-- MOVIMIENTO -->
+
+      <div class="value">
+
+        <div class="value-icon">
+          <svg viewBox="0 0 64 44">
+            <path d="M8 35 Q55 31 35 22 Q16 14 46 10 Q58 7 49 4"/>
+          </svg>
+        </div>
+
+        <div class="value-text">
+          <h2>MOVIMIENTO</h2>
+          <p>Experiencias que conectan</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FRASE FINAL -->
+
+    <p class="final-quote">
+      Hay lugares que solo necesitan<br>
+      una mesa.
+    </p>
+
+    <div class="bottom-line"></div>
+
+  </main>
+
+  <!-- MONTAÑAS DECORATIVAS -->
+
+  <div class="mountain-decoration" aria-hidden="true">
+
+    <svg viewBox="0 0 390 100"
+         preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg">
+
+      <path
+        d="M0 76 Q40 68 70 55 Q110 38 150 65
+           Q210 80 260 42 Q315 22 390 53
+           L390 100 L0 100 Z"
+        fill="#e5d2b8"
+        opacity=".55"
+      />
+
+      <path
+        d="M0 89 Q65 60 130 84 Q190 101 250 68
+           Q320 48 390 77 L390 100 L0 100 Z"
+        fill="#cdbb9f"
+        opacity=".35"
+      />
+
+    </svg>
+
+  </div>
+
+</div>
+
+</body>
+</html>

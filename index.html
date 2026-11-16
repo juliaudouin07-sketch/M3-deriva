@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DERIVA | Inicio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* FONDO ORIGINAL CON MONTAÑAS */
+
+    .home-page .hero-photo.fondo-deriva {
+      position: absolute;
+      left: 0;
+      bottom: 68px;
+      width: 100%;
+      height: 285px;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 50% 50% 0 0 / 13% 13% 0 0;
+      background: linear-gradient(
+        160deg,
+        #f3e8d6 0%,
+        #ecdfc8 55%,
+        #e4d4b7 100%
+      );
+    }
+
+    /* MONTAÑAS */
+
+    .paisaje-deriva {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* RAMA BOTÁNICA DELICADA */
+
+    .olivo-botanico {
+      position: absolute;
+      top: 0;
+      right: -8px;
+      width: 145px;
+      height: 170px;
+      z-index: 2;
+      opacity: 0.82;
+      pointer-events: none;
+    }
+
+    .olivo-botanico svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .home-page .home-button {
+      position: absolute;
+      bottom: 100px;
+      left: 7%;
+      width: 86%;
+      z-index: 4;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <div class="status">
+    9:41
+    <span>● ▰ ▰</span>
+  </div>
+
+  <main class="page home-page">
+
+    <div class="top-actions">
+      <a href="experiencias.html">☰</a>
+      <a href="sobre.html">♙</a>
+    </div>
+
+    <!-- LOGO -->
+
+    <div class="logo">
+      <svg viewBox="0 0 180 75">
+        <path d="M8 59 Q36 57 68 25 Q82 11 98 26 Q127 55 171 59"/>
+        <path d="M28 62 Q81 41 128 60"/>
+        <circle cx="121" cy="12" r="10"/>
+      </svg>
+      <div>DERIVA</div>
+    </div>
+
+    <!-- TEXTO PRINCIPAL -->
+
+    <div class="home-heading">
+      <h1>
+        Experiencias<br>
+        gastronómicas<br>
+        en movimiento
+      </h1>
+
+      <p class="eyebrow">
+        PAISAJES, SABORES<br>
+        Y ENCUENTROS REALES
+      </p>
+    </div>
+
+    <!-- PAISAJE BEIGE -->
+
+    <div class="hero-photo fondo-deriva">
+
+      <svg class="paisaje-deriva"
+           viewBox="0 0 390 280"
+           preserveAspectRatio="none"
+           xmlns="http://www.w3.org/2000/svg">
+
+        <!-- PERFIL DE MONTAÑA -->
+
+        <path
+          d="M0 170
+             C45 160 75 145 110 132
+             C160 120 180 75 210 82
+             C248 93 265 135 310 151
+             C345 165 367 177 390 182"
+          fill="none"
+          stroke="#ad9978"
+          stroke-width="1.1"
+        />
+
+        <!-- COLINA POSTERIOR -->
+
+        <path
+          d="M0 170
+             C70 145 120 170 175 208
+             C240 250 315 225 390 240
+             L390 280 L0 280 Z"
+          fill="#d9c8a9"
+          opacity=".35"
+        />
+
+        <!-- COLINA DELANTERA -->
+
+        <path
+          d="M0 175
+             C60 155 95 180 145 215
+             C230 275 310 250 390 265
+             L390 280 L0 280 Z"
+          fill="#cab896"
+          opacity=".23"
+        />
+
+      </svg>
+
+      <!-- NUEVA RAMA DE OLIVO -->
+
+      <div class="olivo-botanico">
+
+        <svg viewBox="0 0 160 190"
+             xmlns="http://www.w3.org/2000/svg">
+
+          <defs>
+            <linearGradient id="hoja" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#aaa889"/>
+              <stop offset="55%" stop-color="#858b69"/>
+              <stop offset="100%" stop-color="#657256"/>
+            </linearGradient>
+          </defs>
+
+          <!-- TALLO PRINCIPAL CURVO -->
+
+          <g fill="none"
+             stroke="#777c5c"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+
+            <path
+              d="M162 0
+                 C146 28 128 45 118 70
+                 C108 99 88 125 48 166"
+              stroke-width="1.7"
+            />
+
+            <path d="M143 33 Q120 24 95 17"
+                  stroke-width="1.1"/>
+
+            <path d="M127 53 Q142 75 148 95"
+                  stroke-width="1.1"/>
+
+            <path d="M111 83 Q84 70 62 72"
+                  stroke-width="1.1"/>
+
+            <path d="M98 111 Q111 132 105 151"
+                  stroke-width="1.1"/>
+
+            <path d="M75 142 Q48 128 24 133"
+                  stroke-width="1.1"/>
+
+          </g>
+
+          <!-- HOJAS ALARGADAS Y NATURALES -->
+
+          <g fill="url(#hoja)"
+             fill-opacity=".65"
+             stroke="#777e60"
+             stroke-width=".65">
+
+            <path d="M143 33 Q119 1 95 17 Q117 29 143 33Z"/>
+
+            <path d="M143 33 Q148 8 161 0 Q159 23 143 33Z"/>
+
+            <path d="M127 53 Q151 48 156 29 Q137 33 127 53Z"/>
+
+            <path d="M127 53 Q136 77 148 95 Q151 65 127 53Z"/>
+
+            <path d="M111 83 Q82 52 62 72 Q86 83 111 83Z"/>
+
+            <path d="M111 83 Q124 105 119 124 Q101 107 111 83Z"/>
+
+            <path d="M98 111 Q73 95 53 103 Q73 119 98 111Z"/>
+
+            <path d="M98 111 Q117 131 105 151 Q91 133 98 111Z"/>
+
+            <path d="M75 142 Q45 111 24 133 Q45 146 75 142Z"/>
+
+            <path d="M75 142 Q82 166 64 182 Q60 159 75 142Z"/>
+
+            <path d="M48 166 Q22 150 8 157 Q23 173 48 166Z"/>
+
+          </g>
+
+          <!-- PEQUEÑAS ACEITUNAS -->
+
+          <g fill="#8c946b"
+             fill-opacity=".65"
+             stroke="#677457"
+             stroke-width=".8">
+
+            <ellipse cx="117" cy="102"
+                     rx="6" ry="9"
+                     transform="rotate(22 117 102)"/>
+
+            <ellipse cx="128" cy="111"
+                     rx="5" ry="8"
+                     transform="rotate(-18 128 111)"/>
+
+          </g>
+
+          <!-- NERVADURAS DE ALGUNAS HOJAS -->
+
+          <g fill="none"
+             stroke="#d6d2b4"
+             stroke-width=".65"
+             opacity=".65">
+
+            <path d="M143 33 L102 17"/>
+            <path d="M111 83 L65 72"/>
+            <path d="M98 111 L55 104"/>
+            <path d="M75 142 L26 133"/>
+
+          </g>
+
+        </svg>
+
+      </div>
+
+    </div>
+
+    <!-- BOTÓN -->
+
+    <a href="experiencias.html"
+       class="btn home-button">
+      Explorar experiencias &rarr;
+    </a>
+
+  </main>
+
+  <!-- NAVEGACIÓN INFERIOR -->
+
+  <nav class="bottom-nav">
+
+    <a href="index.html" class="active">
+      <span>⌂</span>Inicio
+    </a>
+
+    <a href="experiencias.html">
+      <span>❧</span>Experiencias
+    </a>
+
+    <a href="reservas.html">
+      <span>▦</span>Reservas
+    </a>
+
+    <a href="descubrir.html">
+      <span>◇</span>Descubrir
+    </a>
+
+    <a href="sobre.html">
+      <span>♙</span>Perfil
+    </a>
+
+  </nav>
+
+</div>
+
+</body>
+</html>

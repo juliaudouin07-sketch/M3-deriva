@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DERIVA | Un paisaje para compartir</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* ESTILOS GENERALES */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e8ded0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* PANTALLA DEL CELULAR */
+
+    .app {
+      position: relative;
+      width: 390px;
+      max-width: 100%;
+      height: 780px;
+      margin: 20px auto;
+      border: 2px solid #493b30;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #211710;
+    }
+
+    /* FOTO DE PORTADA */
+
+    .portada {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,.25),
+          rgba(0,0,0,.2),
+          rgba(0,0,0,.7)
+        ),
+        url("imagenes/fogata.png") center/cover;
+    }
+
+    /* VIDEO MP4 */
+
+    .video-real {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #211710;
+      display: none;
+      z-index: 2;
+    }
+
+    .app.reproduciendo .video-real {
+      display: block;
+    }
+
+    .app.reproduciendo .portada {
+      display: none;
+    }
+
+    /* BARRA SUPERIOR */
+
+    .status {
+      position: absolute;
+      top: 10px;
+      left: 18px;
+      right: 18px;
+      z-index: 5;
+
+      width: calc(100% - 36px);
+      display: flex;
+      justify-content: space-between;
+
+      color: white;
+      font: bold 11px Arial, sans-serif;
+    }
+
+    .volver {
+      position: absolute;
+      top: 43px;
+      left: 24px;
+      z-index: 6;
+
+      color: white;
+      text-decoration: none;
+      font-size: 30px;
+    }
+
+    /* TITULO CENTRAL */
+
+    .contenido {
+      position: absolute;
+      top: 31%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding: 0 25px;
+      z-index: 3;
+    }
+
+    .contenido h1 {
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .subtitulo {
+      margin-top: 16px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* BOTON REPRODUCIR */
+
+    .play {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 76px;
+      height: 76px;
+      margin: 62px auto 0;
+
+      border: none;
+      border-radius: 50%;
+      background: #fff9ef;
+      color: #842632;
+      font-size: 28px;
+      cursor: pointer;
+      padding-left: 5px;
+    }
+
+    /* TEXTO INFERIOR */
+
+    .inferior {
+      position: absolute;
+      bottom: 38px;
+      left: 25px;
+      right: 25px;
+      z-index: 3;
+
+      color: white;
+    }
+
+    .inferior h2 {
+      font-size: 30px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .inferior a {
+      color: white;
+      text-decoration: none;
+      font-size: 19px;
+    }
+
+    /* OCULTAR PORTADA AL REPRODUCIR */
+
+    .app.reproduciendo .contenido,
+    .app.reproduciendo .inferior {
+      display: none;
+    }
+
+    /* BOTON CERRAR */
+
+    .cerrar {
+      display: none;
+      position: absolute;
+      top: 85px;
+      right: 20px;
+      z-index: 10;
+
+      width: 40px;
+      height: 40px;
+
+      border-radius: 50%;
+      border: 1px solid white;
+      background: rgba(0,0,0,.6);
+
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .app.reproduciendo .cerrar {
+      display: block;
+    }
+
+    /* ADAPTACION A CELULAR */
+
+    @media (max-width: 480px) {
+
+      .app {
+        width: 100%;
+        height: 100dvh;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="app" id="app">
+
+    <!-- FOTO DE PORTADA -->
+
+    <div class="portada"></div>
+
+    <!-- VIDEO REAL DE DERIVA -->
+
+    <video
+      id="videoDeriva"
+      class="video-real"
+      src="imagenes/videoapp.mp4"
+      playsinline
+      controls
+      preload="metadata">
+    </video>
+
+    <!-- BARRA SUPERIOR -->
+
+    <div class="status">
+      <span>9:41</span>
+      <span>● ▰ ▰</span>
+    </div>
+
+    <!-- BOTON VOLVER -->
+
+    <a href="index.html" class="volver">‹</a>
+
+    <!-- CONTENIDO DE PORTADA -->
+
+    <div class="contenido">
+
+      <h1>
+        Un paisaje<br>
+        para compartir
+      </h1>
+
+      <p class="subtitulo">
+        Experiencias que conectan
+      </p>
+
+      <button
+        class="play"
+        id="playButton"
+        aria-label="Reproducir video">
+        ▶
+      </button>
+
+    </div>
+
+    <!-- TEXTO INFERIOR -->
+
+    <div class="inferior">
+
+      <h2>Sabores de nuestra tierra</h2>
+
+      <a href="experiencias.html">
+        Ver más experiencias →
+      </a>
+
+    </div>
+
+    <!-- BOTON CERRAR -->
+
+    <button
+      class="cerrar"
+      id="cerrarButton"
+      aria-label="Cerrar video">
+      ×
+    </button>
+
+  </div>
+
+  <script>
+
+    const app = document.getElementById("app");
+
+    const video = document.getElementById("videoDeriva");
+
+    const playButton =
+      document.getElementById("playButton");
+
+    const cerrarButton =
+      document.getElementById("cerrarButton");
+
+    // REPRODUCIR VIDEO DENTRO DE LA APP
+
+    playButton.addEventListener("click", function() {
+
+      app.classList.add("reproduciendo");
+
+      video.play().catch(function(error) {
+
+        console.error(error);
+
+        app.classList.remove("reproduciendo");
+
+        alert(
+          "No se pudo reproducir el video. Revisá que videoapp.mp4 esté en la carpeta imagenes."
+        );
+
+      });
+
+    });
+
+    // CERRAR Y VOLVER A LA PORTADA
+
+    cerrarButton.addEventListener("click", function() {
+
+      video.pause();
+
+      video.currentTime = 0;
+
+      app.classList.remove("reproduciendo");
+
+    });
+
+    // VOLVER A LA PORTADA CUANDO TERMINA
+
+    video.addEventListener("ended", function() {
+
+      video.currentTime = 0;
+
+      app.classList.remove("reproduciendo");
+
+    });
+
+  </script>
+
+</body>
+</html>

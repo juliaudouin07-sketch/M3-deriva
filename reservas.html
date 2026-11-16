@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DERIVA | Mis reservas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="status">9:41 <span>● ▰ ▰</span></div>
+
+    <main class="page">
+      <a class="back" href="index.html">‹</a>
+
+      <div class="reservation-tabs">
+        <button class="active" data-reservation-tab="upcoming">Próximas</button>
+        <button data-reservation-tab="previous">Anteriores</button>
+      </div>
+
+      <section id="upcoming-reservations">
+        <article class="booking-card">
+          <div class="booking-image mountain-photo">
+            <div class="date-box">
+              <small>SÁB</small>
+              <strong>14</strong>
+              <small>JUN</small>
+            </div>
+          </div>
+
+          <h2>Cena entre montañas</h2>
+          <p class="muted">Valle de Uco</p>
+
+          <div class="booking-facts">
+            <p>▦ &nbsp; Sábado 14 de junio</p>
+            <p>◷ &nbsp; 19:30 hs</p>
+            <p>♧ &nbsp; Valle de Uco, Mendoza</p>
+            <p>♙ &nbsp; 2 personas</p>
+          </div>
+
+          <a class="btn" href="detalle-montanas.html">
+            Ver detalles
+          </a>
+        </article>
+
+        <article class="booking-small">
+          <div class="experience-thumb olive-photo"></div>
+          <div>
+            <h3>Almuerzo entre olivos</h3>
+            <p>28 de marzo · 2 personas</p>
+          </div>
+        </article>
+
+        
+      </section>
+
+      <section id="previous-reservations" hidden>
+        <p class="empty-state">
+          Todavía no hay reservas anteriores.
+        </p>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="index.html"><span>⌂</span>Inicio</a>
+      <a href="experiencias.html"><span>❧</span>Experiencias</a>
+      <a href="reservas.html" class="active"><span>▦</span>Reservas</a>
+      <a href="descubrir.html"><span>◇</span>Descubrir</a>
+      <a href="sobre.html"><span>♙</span>Perfil</a>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
